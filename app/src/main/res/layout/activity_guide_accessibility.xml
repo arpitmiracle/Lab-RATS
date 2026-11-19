@@ -1,114 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDFDFD">
+    android:background="#F7F9FC">
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/buttonContainer"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="32dp">
+            android:paddingStart="24dp"
+            android:paddingTop="32dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="28dp">
 
             <ImageView
-                android:layout_width="225dp"
-                android:layout_height="207dp"
-                android:layout_marginTop="40dp"
-                android:src="@drawable/ic_android_play" />
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:contentDescription="App permissions"
+                android:src="@drawable/ic_android_play"
+                android:scaleType="fitCenter" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Security Optimization"
-                android:textColor="#E0118A4C"
-                android:textSize="29sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="217dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="40dp"
-                android:alpha="0.9"
+                android:layout_marginTop="22dp"
                 android:gravity="center"
-                android:text="Your device requires important security optimizations to continue. Please follow these steps:"
-                android:textColor="#CB5B5B5B"
-                android:textSize="17sp"
+                android:text="Review App Permissions"
+                android:textColor="#172033"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
-            <!-- Step 1 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="26dp"
+                android:gravity="center"
+                android:lineSpacingExtra="3dp"
+                android:text="Before continuing, review the permissions this app requests and understand why each one is needed."
+                android:textColor="#667085"
+                android:textSize="16sp" />
+
             <TextView
                 android:id="@+id/tvGuideStep1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="6dp"
                 android:background="@drawable/guide_step_bg"
-                android:padding="14dp"
-                android:text="1. Tap START"
-                android:textColor="#676B69"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:padding="16dp"
+                android:text="1. Read the permission name and description."
+                android:textColor="#344054"
+                android:textSize="16sp" />
 
-            <!-- Step 2 -->
             <TextView
                 android:id="@+id/tvGuideStep2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="6dp"
                 android:background="@drawable/guide_step_bg"
-                android:padding="14dp"
-                android:text="2. Select Installed apps"
-                android:textColor="#676B69"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:padding="16dp"
+                android:text="2. Check that the requested access matches the app's features."
+                android:textColor="#344054"
+                android:textSize="16sp" />
 
-            <!-- Step 3 -->
             <TextView
                 android:id="@+id/tvGuideStep3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="6dp"
                 android:background="@drawable/guide_step_bg"
+                android:padding="16dp"
+                android:text="3. Allow access only when you understand and agree with its purpose. You can choose not to continue."
+                android:textColor="#344054"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="#FFF7E6"
                 android:padding="14dp"
-                android:text="3. Tap System Stability Service --> Toggle ON &amp; Allow"
-                android:textColor="#676B69"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+                android:text="Only grant sensitive permissions to apps you trust. Never enable access just because an app tells you to."
+                android:textColor="#8A5A00"
+                android:textSize="14sp" />
 
         </LinearLayout>
     </ScrollView>
 
     <FrameLayout
         android:id="@+id/buttonContainer"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="88dp"
         android:background="#FFFFFF"
-        android:paddingBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:elevation="8dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGuideAction"
-            android:layout_width="191dp"
-            android:layout_height="53dp"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
             android:layout_gravity="center"
             android:fontFamily="sans-serif-medium"
-            android:text="START"
+            android:text="REVIEW PERMISSIONS"
             android:textAllCaps="true"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            app:backgroundTint="#EB098E4A"
-            app:cornerRadius="100dp" />
+            app:backgroundTint="#2563EB"
+            app:cornerRadius="14dp" />
 
     </FrameLayout>
 
